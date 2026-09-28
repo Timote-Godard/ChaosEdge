@@ -1,21 +1,16 @@
-import Bouton from "./Bouton";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Radar from "./pages/Radar";
+import Attaque from "./pages/Attaque";
 
-
-function App() {
-
+export default function App() {
   return (
-    <div className='flex bg-red-400 w-screen h-screen'>
-
-      <div className="h-50 w-full bg-blue-300">
-        <Bouton name={"Timoté"} />
-      </div>
-
-      <div className="h-50 w-full bg-blue-300">
-        <Bouton name={"Mohamed"}/>
-      </div>
-
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/attaque" element={<Attaque />} />
+        <Route path="/radar" element={<Radar />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
